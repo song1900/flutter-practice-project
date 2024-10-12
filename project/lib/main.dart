@@ -35,8 +35,26 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("Test Title"),
       ),
+      drawer: ListView(
+        padding: EdgeInsets.all(10.0),
+        children: const <Widget>[
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.blue,
+            ),
+            child: Text("Drawer Header Part"),
+          ),
+          ListTile(
+            title: Text("Menu 1"),
+          )
+        ],
+      ),
       body: const Center(
         child: Text("HELLO WORLD!"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => print("Cliked"),
+        child: const Icon(Icons.mouse),
       ),
     );
   }
