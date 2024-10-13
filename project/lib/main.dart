@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text("Test Title"),
       ),
       drawer: ListView(
-        padding: EdgeInsets.all(10.0),
+        padding: EdgeInsets.zero,
         children: const <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
@@ -49,8 +49,43 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
-      body: const Center(
-        child: Text("HELLO WORLD!"),
+      body: Container(
+        alignment: Alignment.topLeft,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row( 
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: 200,
+                  color: Colors.pink,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: 200,
+                  color: Colors.purple,
+                ),
+              ],
+            ),
+            Row( 
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: 200,
+                  color: Colors.blue,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: 200,
+                  color: Colors.orange,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => print("Cliked"),
