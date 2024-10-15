@@ -49,6 +49,17 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
+      body: ListView(
+        // scrollDirection: Axis.horizontal,
+        children: [
+          postContainer(title: "Title 1", colorData: Colors.orange),
+          postContainer(title: "Title 2"),
+          postContainer(title: "Title 3", colorData: Colors.yellow),
+          postContainer(title: "Title 4"),
+          postContainer(title: "Title 5", colorData: Colors.greenAccent),
+        ],
+      ),
+      /*
       body: Center(
         child: Column(
           children: [
@@ -67,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         )
       ),
+      */
       /*
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -136,6 +148,29 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () => print("Cliked"),
         child: const Icon(Icons.mouse),
       ),
+    );
+  }
+
+  Widget postContainer({String title = '', Color colorData = Colors.blue}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(10),
+          child: Text(
+            title,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        Container(
+          width: MediaQuery.of(context).size.width,
+          height: 200,
+          color: colorData,
+        ),
+      ],
     );
   }
 }
