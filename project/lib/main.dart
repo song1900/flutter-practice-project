@@ -49,6 +49,25 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
+      body: Center(
+        child: Column(
+          children: [
+            TextButton(
+              onPressed: () => print("Text Button Clicked"),
+              child: const Text("TextButton")
+              ),
+              GestureDetector(
+                onTap: () => print("GestureDetector used."),
+                child: Container(
+                  width: 200,
+                  height: 200,
+                  color: Colors.blue,
+                ),
+              )
+          ],
+        )
+      ),
+      /*
       body: Container(
         width: MediaQuery.of(context).size.width,
         color: Colors.yellow,
@@ -112,6 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         */
       ),
+      */
       floatingActionButton: FloatingActionButton(
         onPressed: () => print("Cliked"),
         child: const Icon(Icons.mouse),
