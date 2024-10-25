@@ -29,6 +29,34 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  final postList = [
+    {
+      "title": "Sample Title 1",
+      "color": Colors.green,
+    },
+    {
+      "title": "Sample Title 2",
+      "color": Colors.red,
+    },
+    {
+      "title": "Sample Title 3",
+      "color": Colors.orange,
+    },
+    {
+      "title": "Sample Title 4",
+      "color": Colors.blue,
+    },
+    {
+      "title": "Sample Title 5",
+      "color": Colors.purple,
+    },
+    {
+      "title": "Sample Title 6",
+      "color": Colors.pink,
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,15 +77,14 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
-      body: ListView(
-        // scrollDirection: Axis.horizontal,
-        children: [
-          postContainer(title: "Title 1", colorData: Colors.orange),
-          postContainer(title: "Title 2"),
-          postContainer(title: "Title 3", colorData: Colors.yellow),
-          postContainer(title: "Title 4"),
-          postContainer(title: "Title 5", colorData: Colors.greenAccent),
-        ],
+      body: ListView.builder(
+        itemCount: postList.length,
+        itemBuilder: (BuildContext con, int index) {
+          return postContainer(
+            title: postList[index]["title"] as String,
+            colorData: postList[index]["color"] as Color,
+          );
+        },
       ),
       /*
       body: Center(
