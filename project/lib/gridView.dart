@@ -30,38 +30,61 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  final postList = [
+    {
+      "number": "0",
+      "color": Colors.green,
+    },
+    {
+      "number": "1",
+      "color": Colors.red,
+    },
+    {
+      "number": "2",
+      "color": Colors.orange,
+    },
+    {
+      "number": "3",
+      "color": Colors.pink,
+    },
+    {
+      "number": "4",
+      "color": Colors.amber,
+    },
+    {
+      "number": "5",
+      "color": Colors.blueGrey,
+    },
+    {
+      "number": "6",
+      "color": Colors.purple,
+    },
+    {
+      "number": "7",
+      "color": Colors.blueAccent,
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Test Title2"),
       ),
-      body: GridView(
-        scrollDirection: Axis.horizontal, // 기본값 vertical
+      body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
+          crossAxisCount: 2,
           crossAxisSpacing: 15.0,
-          mainAxisSpacing: 12.0
+          mainAxisSpacing: 12.0,
         ),
-        children: [
-          postContainer(number: "1"),
-          postContainer(number: "2", colorData: Colors.green),
-          postContainer(number: "3", colorData: Colors.deepPurple),
-          postContainer(number: "4", colorData: Colors.pinkAccent),
-          postContainer(number: "1"),
-          postContainer(number: "2", colorData: Colors.green),
-          postContainer(number: "3", colorData: Colors.deepPurple),
-          postContainer(number: "4", colorData: Colors.pinkAccent),
-          postContainer(number: "1"),
-          postContainer(number: "2", colorData: Colors.green),
-          postContainer(number: "3", colorData: Colors.deepPurple),
-          postContainer(number: "4", colorData: Colors.pinkAccent),
-          postContainer(number: "1"),
-          postContainer(number: "2", colorData: Colors.green),
-          postContainer(number: "3", colorData: Colors.deepPurple),
-          postContainer(number: "4", colorData: Colors.pinkAccent),
-        ],
-      )
+        itemCount: postList.length,
+        itemBuilder: (BuildContext con, int index) {
+          return postContainer(
+            number: postList[index]["number"] as String,
+            colorData: postList[index]["color"] as Color,
+          );
+        },
+        )
     );
   }
 
