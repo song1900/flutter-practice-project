@@ -43,5 +43,6 @@ migration:
   unmanaged_files:
     # - 'lib/main.dart'
     # - 'lib/gridView.dart'
-    - 'lib/scroll.dart'
+    # - 'lib/scroll.dart'
+    - 'lib/align.dart'
     - 'ios/Runner.xcodeproj/project.pbxproj'
