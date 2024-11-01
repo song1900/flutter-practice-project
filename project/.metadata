@@ -45,5 +45,6 @@ migration:
     # - 'lib/gridView.dart'
     # - 'lib/scroll.dart'
     # - 'lib/align.dart'
-    - 'lib/AlertDialog.dart'
+    # - 'lib/AlertDialog.dart'
+    - 'lib/NetworkImage.dart'
     - 'ios/Runner.xcodeproj/project.pbxproj'
