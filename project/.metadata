@@ -46,5 +46,6 @@ migration:
     # - 'lib/scroll.dart'
     # - 'lib/align.dart'
     # - 'lib/AlertDialog.dart'
-    - 'lib/NetworkImage.dart'
+    # - 'lib/NetworkImage.dart'
+    - 'lib/AutoLayout.dart'
     - 'ios/Runner.xcodeproj/project.pbxproj'
