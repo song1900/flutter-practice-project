@@ -47,5 +47,6 @@ migration:
     # - 'lib/align.dart'
     # - 'lib/AlertDialog.dart'
     # - 'lib/NetworkImage.dart'
-    - 'lib/AutoLayout.dart'
+    # - 'lib/AutoLayout.dart'
+    - 'lib/Buttons.dart'
     - 'ios/Runner.xcodeproj/project.pbxproj'
