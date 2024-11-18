@@ -35,6 +35,10 @@ String sayHello3(
   [String? country = "cuba"] // [String? ] 널러블 Swift의 옵셔널
 ) => "Hello $name, you are $age years old from $country";
 
+
+// QQ Operator
+String capitalizeName(String? name) => name?.toUpperCase() ?? "zaya QQ";
+
 void main() {
 
   print(sayHello('manbo'));
@@ -55,4 +59,12 @@ void main() {
 
   var result = sayHello3("manbo3", 18);
   print(result);
+
+  // QQ Operator
+  capitalizeName("manbo QQ");
+  capitalizeName(null);
+
+  String? name;
+  name ??= "manbo?";
+  
 }
