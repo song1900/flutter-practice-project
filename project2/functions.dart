@@ -39,6 +39,14 @@ String sayHello3(
 // QQ Operator
 String capitalizeName(String? name) => name?.toUpperCase() ?? "zaya QQ";
 
+// Typedef
+typedef ListOfInts = List<int>; // Swift의 typealias
+
+ListOfInts reverseListOfNumbers(List<int> list) {
+  var reversed = list.reversed;
+  return reversed.toList();
+}
+
 void main() {
 
   print(sayHello('manbo'));
@@ -66,5 +74,8 @@ void main() {
 
   String? name;
   name ??= "manbo?";
+
+  // Typedef
+  print(reverseListOfNumbers([1, 2, 3]));
   
 }
