@@ -6,6 +6,7 @@ class Player {
 // late는 변수들의 값을 나중에 받아올거라는걸 의미
   final String name;
   int xp;
+  String team;
 
 // 초기화 방법 1
   // Player(String name, int xp) {
@@ -15,8 +16,21 @@ class Player {
 // 초기화 방법 2
   Player({
     required this.name,
-     required this.xp
+    required this.xp,
+    required this.team
   });
+
+  Player.createBluePlayer({
+    required String name, 
+    required int xp
+  }) : this.xp = xp,
+       this.name = name,
+       this.team = 'blue';
+
+  Player.createRedPlayer(String name, int xp) : 
+      this.xp = xp,
+      this.name = name,
+      this.team = 'red';
 
   void sayHello() {
     print("Hi my name is $name");
@@ -33,15 +47,12 @@ void main() {
 
   // player.manbo2 = "zaya2"  // 에러
 
-  var player = Player(
+  var player = Player.createBluePlayer(
     name: "manbo",
     xp: 1500
   );
   player.sayHello();
 
-  var player2 = Player(
-    name: "zaya",
-    xp: 2500
-  );
+  var player2 = Player.createRedPlayer("zaya", 2500);
   player2.sayHello();
 }
