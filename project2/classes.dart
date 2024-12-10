@@ -4,7 +4,7 @@ class Player {
   // int xp = 1500;
 
 // late는 변수들의 값을 나중에 받아올거라는걸 의미
-  final String name;
+  String name;
   int xp;
   String team;
 
@@ -55,4 +55,12 @@ void main() {
 
   var player2 = Player.createRedPlayer("zaya", 2500);
   player2.sayHello();
+
+
+  var manbo = Player(name: "manbo", xp: 1000, team: "red");
+  var potato = manbo
+  ..name = "zaya2"
+  ..xp = 20000
+  ..team = "blue"
+  ..sayHello();
 }
