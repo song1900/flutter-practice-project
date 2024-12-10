@@ -1,3 +1,5 @@
+enum Team { red, blue }
+
 class Player {
   // String name = 'manbo';
   // final String name2 = "manbo2"; // final variable, property는 수정할 수 없음
@@ -6,7 +8,7 @@ class Player {
 // late는 변수들의 값을 나중에 받아올거라는걸 의미
   String name;
   int xp;
-  String team;
+  Team team;
 
 // 초기화 방법 1
   // Player(String name, int xp) {
@@ -25,12 +27,12 @@ class Player {
     required int xp
   }) : this.xp = xp,
        this.name = name,
-       this.team = 'blue';
+       this.team = Team.blue;
 
   Player.createRedPlayer(String name, int xp) : 
       this.xp = xp,
       this.name = name,
-      this.team = 'red';
+      this.team = Team.red;
 
   void sayHello() {
     print("Hi my name is $name");
@@ -57,10 +59,10 @@ void main() {
   player2.sayHello();
 
 
-  var manbo = Player(name: "manbo", xp: 1000, team: "red");
+  var manbo = Player(name: "manbo", xp: 1000, team: Team.red);
   var potato = manbo
   ..name = "zaya2"
   ..xp = 20000
-  ..team = "blue"
+  ..team = Team.blue
   ..sayHello();
 }
