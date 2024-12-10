@@ -1,6 +1,11 @@
+
+abstract class Human {
+  void walk();
+}
+
 enum Team { red, blue }
 
-class Player {
+class Player extends Human {
   // String name = 'manbo';
   // final String name2 = "manbo2"; // final variable, property는 수정할 수 없음
   // int xp = 1500;
@@ -36,6 +41,16 @@ class Player {
 
   void sayHello() {
     print("Hi my name is $name");
+  }
+
+  void walk() {
+    print('im walking');
+  }
+}
+
+class Coach extends Human {
+  void walk() {
+    print('the coach is walking');
   }
 }
 
