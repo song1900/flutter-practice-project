@@ -13,7 +13,10 @@ class Player {
   //   this.xp = xp;
   // }
 // 초기화 방법 2
-  Player(this.name, this.xp);
+  Player({
+    required this.name,
+     required this.xp
+  });
 
   void sayHello() {
     print("Hi my name is $name");
@@ -30,9 +33,15 @@ void main() {
 
   // player.manbo2 = "zaya2"  // 에러
 
-  var player = Player("manbo", 1500);
+  var player = Player(
+    name: "manbo",
+    xp: 1500
+  );
   player.sayHello();
 
-  var player2 = Player("zaya", 2000);
+  var player2 = Player(
+    name: "zaya",
+    xp: 2500
+  );
   player2.sayHello();
 }
